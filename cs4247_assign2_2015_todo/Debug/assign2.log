@@ -1,0 +1,21 @@
+﻿Build started 3/18/2015 5:58:22 PM.
+     1>Project "C:\Users\leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\assign2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I./include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\assign2.exe" /INCREMENTAL /NOLOGO /LIBPATH:./lib FreeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Debug\assign2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Debug\assign2.lib" /MACHINE:X86 /SAFESEH Debug\Camera.obj
+         Debug\Image.obj
+         Debug\ImageIO.obj
+         Debug\Main.obj
+         Debug\Plane.obj
+         Debug\Raytrace.obj
+         Debug\Sphere.obj
+         Debug\Triangle.obj
+         Debug\Util.obj
+         assign2.vcxproj -> C:\Users\leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\Debug\assign2.exe
+     1>Done Building Project "C:\Users\leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\assign2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.04

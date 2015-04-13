@@ -1,0 +1,24 @@
+﻿Build started 3/20/2015 10:32:15 PM.
+     1>Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\assign2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I./include /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp Raytrace.cpp
+         Main.cpp
+         Raytrace.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\assign2.exe" /INCREMENTAL /NOLOGO /LIBPATH:./lib FreeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Release\assign2.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Release\assign2.lib" /MACHINE:X86 /SAFESEH Release\Camera.obj
+         Release\Image.obj
+         Release\ImageIO.obj
+         Release\Main.obj
+         Release\Plane.obj
+         Release\Raytrace.obj
+         Release\Sphere.obj
+         Release\Triangle.obj
+         Release\Util.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+         assign2.vcxproj -> C:\Users\Leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\Release\assign2.exe
+     1>Done Building Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign2_2015_todo\assign2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.90
