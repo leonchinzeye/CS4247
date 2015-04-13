@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuadsViewer", "QuadsViewer.vcxproj", "{F8EFC1AC-2517-4118-81E4-EDCE5CC6B5B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RadiositySolver", "RadiositySolver.vcxproj", "{45CECE32-699B-4A3F-9B68-355F3E6A307F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RadiosityViewer", "RadiosityViewer.vcxproj", "{8BD987EB-70AE-483D-846D-27E14FA5DDB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8EFC1AC-2517-4118-81E4-EDCE5CC6B5B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8EFC1AC-2517-4118-81E4-EDCE5CC6B5B4}.Debug|Win32.Build.0 = Debug|Win32
+		{F8EFC1AC-2517-4118-81E4-EDCE5CC6B5B4}.Release|Win32.ActiveCfg = Release|Win32
+		{F8EFC1AC-2517-4118-81E4-EDCE5CC6B5B4}.Release|Win32.Build.0 = Release|Win32
+		{45CECE32-699B-4A3F-9B68-355F3E6A307F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{45CECE32-699B-4A3F-9B68-355F3E6A307F}.Debug|Win32.Build.0 = Debug|Win32
+		{45CECE32-699B-4A3F-9B68-355F3E6A307F}.Release|Win32.ActiveCfg = Release|Win32
+		{45CECE32-699B-4A3F-9B68-355F3E6A307F}.Release|Win32.Build.0 = Release|Win32
+		{8BD987EB-70AE-483D-846D-27E14FA5DDB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8BD987EB-70AE-483D-846D-27E14FA5DDB9}.Debug|Win32.Build.0 = Debug|Win32
+		{8BD987EB-70AE-483D-846D-27E14FA5DDB9}.Release|Win32.ActiveCfg = Release|Win32
+		{8BD987EB-70AE-483D-846D-27E14FA5DDB9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

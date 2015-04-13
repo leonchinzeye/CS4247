@@ -1,0 +1,181 @@
+#Comment starts with a "#" in the first column.
+#Each line cannot be longer than 1024 characters.
+
+
+#=== VERTICES ===
+
+#Number of vertices.
+28
+
+#Each line must provide the x, y, z coordinates of a vertex.
+#The first vertex has index 0.
+
+#floor (0-3)
+552.8 0.0 0.0
+0.0 0.0 0.0
+0.0 0.0 559.2
+549.6 0.0 559.2
+
+#ceiling (4-7)
+556.0 548.8 0.0
+0.0 548.8   0.0
+0.0 548.8 559.2
+556.0 548.8 559.2
+
+#light (8-11)
+343.0 548.8 227.0
+213.0 548.8 227.0
+213.0 548.8 332.0
+343.0 548.8 332.0
+
+#tall_box_bottom (12-15)
+130.0 0.0  65.0
+82.0 0.0 225.0
+240.0 0.0 272.0
+290.0 0.0 114.0
+
+#short_box_bottom (16-19)
+423.0 0.0 247.0
+265.0 0.0 296.0
+314.0 0.0 456.0
+472.0 0.0 406.0
+
+#tall_box_top (20-23)
+130.0 330.0  65.0
+82.0 330.0 225.0
+240.0 330.0 272.0
+290.0 330.0 114.0
+
+#short_box_top (24-27)
+423.0 165.0 247.0
+265.0 165.0 296.0
+314.0 165.0 456.0
+472.0 165.0 406.0
+
+
+#=== MATERIALS ===
+
+#Number of materials.
+4
+
+#Each material is specified by two lines.
+#First line is the RGB reflectivity.
+#Second line is the RGB emission.
+#The first material has index 0.
+
+
+#light
+0.78 0.78 0.78
+60.0 60.0 60.0
+
+#white
+0.75 0.75 0.75
+0.0 0.0 0.0
+
+#red
+0.7 0.0 0.0
+0.0 0.0 0.0
+
+#green
+0.0 0.7 0.0
+0.0 0.0 0.0
+
+
+#=== SURFACES ===
+
+#Number of surfaces.
+16
+
+#Each surface is made of one or more quadrilateral patches.
+#For each surface, the first integer is the material index,
+#the second integer is the number of quadrilateral patches,
+#then followed by lines where each corresponds to a 
+#quadrilateral patch. Each line has 4 integers, which are
+#indices to the above vertices. The vertices must be listed
+#in counter-clockwise direction when viewed from its frontside.
+
+
+#floor (white)
+1
+1
+0 1 2 3
+
+#ceiling (white)
+1
+4
+4 8 9 5
+5 9 10 6
+6 10 11 7
+7 11 8 4
+
+#light (light)
+0
+1
+8 11 10 9
+
+#back_wall (white)
+1
+1
+0 4 5 1
+
+#left_wall (red)
+2
+1
+1 5 6 2
+
+#right_wall (green)
+3
+1
+3 7 4 0
+
+#tall_block_back (white)
+1
+1
+12 20 23 15
+
+#tall_block_left (white)
+1
+1
+13 21 20 12
+
+#tall_block_front (white)
+1
+1
+14 22 21 13
+
+#tall_block_right (white)
+1
+1
+15 23 22 14
+
+#tall_block_top (white)
+1
+1
+20 21 22 23
+
+#short_block_back (white)
+1
+1
+16 24 27 19
+
+#short_block_left (white)
+1
+1
+17 25 24 16
+
+#short_block_front (white)
+1
+1
+18 26 25 17
+
+#short_block_right (white)
+1
+1
+19 27 26 18
+
+#short_block_top (white)
+1
+1
+24 25 26 27
+
+#End of file.
