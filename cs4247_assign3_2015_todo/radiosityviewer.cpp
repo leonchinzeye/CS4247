@@ -3,8 +3,13 @@
 #include <math.h>
 #include <float.h>
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <GLUT/glext.h>
+#else
 #include <GL/glut.h>
 #include <GL/glext.h>
+#endif
 
 #include "common.h"
 #include "trackball.h"
@@ -15,7 +20,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Input model filename.
-static const char radiosityModelFilename[] = "cornell_box.out";
+static const char radiosityModelFilename[] = "testingSolver.out";
 
 
 /////////////////////////////////////////////////////////////////////////////

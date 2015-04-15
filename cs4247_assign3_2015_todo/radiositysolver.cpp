@@ -14,7 +14,13 @@
 #include <stdio.h>
 #include <math.h>
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <GLUT/glext.h>
+#else
 #include <GL/glut.h>
+#include <GL/glext.h>
+#endif
 
 #include "common.h"
 #include "vector3.h"
@@ -212,6 +218,19 @@ static void PreComputeTopFaceDeltaFormFactors( float deltaFormFactors[], int num
     /**********************************************************
      ****************** WRITE YOUR CODE HERE ******************
      **********************************************************/
+	double x = 0;
+	double y = 0;
+	double deltaX = 0.5 * 2.0 / numPixelsOnWidth;
+	double deltaY = deltaX;
+	double dA = 2 * 2 / pow(numPixelsOnWidth, 2);
+
+	for(int i = 0; i < numPixelsOnWidth; i++) {
+		for(int j = 0; j < numPixelsOnWidth; j++) {
+			x = -1.0 + deltaX + (double)i * 2.0 / numPixelsOnWidth;
+			y = -1.0 + deltaY + (double)j * 2.0 / numPixelsOnWidth;
+			deltaFormFactors[numPixelsOnWidth * i + j] = dA / (M_PI * pow(x * x + y * y + 1, 2));
+		}
+	}
 }
 
 
@@ -225,6 +244,19 @@ static void PreComputeSideFaceDeltaFormFactors( float deltaFormFactors[], int nu
     /**********************************************************
      ****************** WRITE YOUR CODE HERE ******************
      **********************************************************/
+	double z = 0;
+	double y = 0;
+	double deltaY = 0.5 * 2.0 / numPixelsOnWidth;
+	double deltaZ = deltaY;
+	double dA = 2 * 1 / pow(numPixelsOnWidth, 2) / 2 ;
+
+	for(unsigned int i = 0; i < numPixelsOnWidth / 2; i++) {
+		for(unsigned int j = 0; j < numPixelsOnWidth; j++) {
+			z = deltaZ + (double)i * 2.0 / numPixelsOnWidth;
+			y = -1.0 + deltaY + (double)j * 2.0 / numPixelsOnWidth;
+			deltaFormFactors[numPixelsOnWidth * i + j] = dA / (M_PI * pow(z * z + y * y + 1, 2));
+		}
+	}
 }
 
 
@@ -238,6 +270,23 @@ static void SetupHemicubeTopView( const QM_ShooterQuad *shooterQuad, float nearP
     /**********************************************************
      ****************** WRITE YOUR CODE HERE ******************
      **********************************************************/
+    glViewport(0, 0, winWidthHeight, winWidthHeight);
+
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-nearPlane, nearPlane, -nearPlane, nearPlane, nearPlane, farPlane);
+
+    float lookUpVector[3];
+    float referenceVector[3];
+    VecCrossProd(lookUpVector, shooterQuad->normal, VecDiff(referenceVector, shooterQuad->v[0], shooterQuad->v[1]));
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(shooterQuad->centroid[0], shooterQuad->centroid[1], shooterQuad->centroid[2],
+    			shooterQuad->centroid[0] + shooterQuad->normal[0],
+    			shooterQuad->centroid[1] + shooterQuad->normal[1],
+    			shooterQuad->centroid[2] + shooterQuad->normal[2],
+    			lookUpVector[0], lookUpVector[1], lookUpVector[2]);
 }
 
 
@@ -252,6 +301,41 @@ static void SetupHemicubeSideView( int face, const QM_ShooterQuad *shooterQuad, 
     /**********************************************************
      ****************** WRITE YOUR CODE HERE ******************
      **********************************************************/
+
+    glViewport(0, 0, winWidthHeight, winWidthHeight / 2);
+
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-nearPlane, nearPlane, 0, nearPlane, nearPlane, farPlane);
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    float referenceVector[3];
+    VecDiff(referenceVector, shooterQuad->v[0], shooterQuad->v[1]);
+    float lookAt[3];
+
+    switch(face) {
+    	case 1:
+    		lookAt[0] = referenceVector[0];
+    		lookAt[1] = referenceVector[1];
+    		lookAt[2] = referenceVector[2];
+    		break;
+    	case 2:
+    		VecCrossProd(lookAt, shooterQuad->normal, referenceVector);
+    		break;
+    	case 3:
+    		VecNeg(lookAt, referenceVector);
+    		break;
+    	case 4:
+    		VecNeg(lookAt, VecCrossProd(lookAt, shooterQuad->normal, referenceVector));
+    		break;
+    }
+
+    gluLookAt(shooterQuad->centroid[0], shooterQuad->centroid[1], shooterQuad->centroid[2],
+    			shooterQuad->centroid[0] + lookAt[0],
+    			shooterQuad->centroid[1] + lookAt[1],
+    			shooterQuad->centroid[2] + lookAt[2],
+    			shooterQuad->normal[0], shooterQuad->normal[1], shooterQuad->normal[2]);
 }
 
 
@@ -269,6 +353,17 @@ static void UpdateRadiosities( const QM_Model *m, const float shotPower[3], cons
         /**********************************************************
          ****************** WRITE YOUR CODE HERE ******************
          **********************************************************/
+//        float formFactor[3] = {deltaFormFactors[i], deltaFormFactors[i], deltaFormFactors[i]};
+
+        //R component
+        float red, gre, blu;
+        red = m->gatherers[g]->surface->reflectivity[0] * deltaFormFactors[i] * shotPower[0] / m->gatherers[g]->area;
+        gre = m->gatherers[g]->surface->reflectivity[1] * deltaFormFactors[i] * shotPower[1] / m->gatherers[g]->area;
+        blu = m->gatherers[g]->surface->reflectivity[2] * deltaFormFactors[i] * shotPower[2] / m->gatherers[g]->area;
+
+        m->gatherers[g]->radiosity[0] += red;
+        m->gatherers[g]->radiosity[1] += gre;
+        m->gatherers[g]->radiosity[2] += blu;
     }
 }
 
