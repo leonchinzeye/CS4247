@@ -30,7 +30,7 @@
 static const char inputModelFilename[] = "cornell_box.in";
 
 // Output model filename. This model contains the radiosity solution.
-static const char outputModelFilename[] = "cornell_box.out";
+static const char outputModelFilename[] = "testingSolver.out";
 
 // Threshold for subdiving the original quads to get shooter quads.
 static const float maxShooterQuadEdgeLength = 70.0f;
@@ -212,17 +212,6 @@ static void PreComputeTopFaceDeltaFormFactors( float deltaFormFactors[], int num
     /**********************************************************
      ****************** WRITE YOUR CODE HERE ******************
      **********************************************************/
-	double x = 0;
-	double y = 0;
-	double dA = 0;
-
-	for(int i = 0; i < numPixelsOnWidth; i++) {
-		for(int j = 0; j < numPixelsOnWidth; j++) {
-			x = -1 + 1.0f / numPixelsOnWidth + (double)i * 2 / numPixelsOnWidth;
-			y = -1 + 1.0f / numPixelsOnWidth + (double)j * 2 / numPixelsOnWidth;
-			deltaFormFactors[numPixelsOnWidth * i + j] = dA / (M_PI * pow(x * x + y * y + 1, 2));
-		}
-	}
 }
 
 

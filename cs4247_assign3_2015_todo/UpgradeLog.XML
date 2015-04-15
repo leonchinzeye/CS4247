@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
 <Properties><Property Name="Solution" Value="assign3">
 </Property><Property Name="Solution File" Value="C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\assign3.sln">
-</Property><Property Name="Date" Value="Monday, April 13, 2015">
-</Property><Property Name="Time" Value="12:08 PM">
+</Property><Property Name="Date" Value="Wednesday, April 15, 2015">
+</Property><Property Name="Time" Value="11:01 AM">
 </Property></Properties><Event ErrorLevel="0" Project="" Source="assign3.sln" Description="File successfully backed up as C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\assign3.sln.old">
 </Event><Event ErrorLevel="0" Project="QuadsViewer" Source="QuadsViewer.vcproj" Description="Converting project file 'C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\QuadsViewer.vcproj'.">
 </Event><Event ErrorLevel="1" Project="QuadsViewer" Source="QuadsViewer.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">

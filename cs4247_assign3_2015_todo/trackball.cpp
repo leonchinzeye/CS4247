@@ -10,15 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#include <GLUT/glext.h>
-#else
 #include <GL/glut.h>
-#include <GL/glext.h>
-#endif
-
 #include "trackball.h"
 
 
