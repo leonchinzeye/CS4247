@@ -1,59 +1,9 @@
-﻿Build started 15-Apr-15 11:02:23 AM.
-     1>Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\RadiositySolver.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\RadiositySolver.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt quadmodel.cpp radiositysolver.cpp
-         radiositysolver.cpp
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\radiositysolver.cpp(339): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\radiositysolver.cpp(442): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-         quadmodel.cpp
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(166): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(181): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(194): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(213): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(227): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(237): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(255): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(271): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(281): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(297): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\users\leon\desktop\university\cs4247\cs4247_assign3_2015_todo\quadmodel.cpp(607): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-         Generating Code...
-       ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\RadiositySolver.exe.embed.manifest.res" Debug\RadiositySolver_manifest.rc 
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\RadiositySolver.exe" /INCREMENTAL /NOLOGO /LIBPATH:./lib opengl32.lib glu32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\RadiositySolver.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\Debug\RadiositySolver.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Debug\RadiositySolver.lib" /MACHINE:X86 Debug\RadiositySolver.exe.embed.manifest.res
-         Debug\common.obj
-         Debug\quadmodel.obj
-         Debug\radiositysolver.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\RadiositySolver.exe.embed.manifest" /manifest Debug\RadiositySolver.exe.intermediate.manifest
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\RadiositySolver.exe.embed.manifest.res" Debug\RadiositySolver_manifest.rc 
-       LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\RadiositySolver.exe" /INCREMENTAL /NOLOGO /LIBPATH:./lib opengl32.lib glu32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\RadiositySolver.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\Debug\RadiositySolver.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Debug\RadiositySolver.lib" /MACHINE:X86 Debug\RadiositySolver.exe.embed.manifest.res
-         Debug\common.obj
-         Debug\quadmodel.obj
-         Debug\radiositysolver.obj
-         RadiositySolver.vcxproj -> C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\Debug\RadiositySolver.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\RadiositySolver.unsuccessfulbuild".
-         Touching "Debug\RadiositySolver.lastbuildstate".
-     1>Done Building Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\RadiositySolver.vcxproj" (build target(s)).
+﻿Build started 15-Apr-15 11:08:22 AM.
+     1>Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\RadiositySolver.vcxproj" on node 2 (clean target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\RadiositySolver.lastbuildstate".
+     1>Done Building Project "C:\Users\Leon\Desktop\University\CS4247\cs4247_assign3_2015_todo\RadiositySolver.vcxproj" (clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.00
+Time Elapsed 00:00:00.01
