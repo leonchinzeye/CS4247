@@ -33,10 +33,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Input model filename.
-static const char inputModelFilename[] = "cornell_box.in";
+static const char inputModelFilename[] = "myinput.in";
 
 // Output model filename. This model contains the radiosity solution.
-static const char outputModelFilename[] = "testingSolver.out";
+static const char outputModelFilename[] = "myscene.out";
 
 // Threshold for subdiving the original quads to get shooter quads.
 static const float maxShooterQuadEdgeLength = 70.0f;
@@ -222,7 +222,7 @@ static void PreComputeTopFaceDeltaFormFactors( float deltaFormFactors[], int num
 	double y = 0;
 	double deltaX = 0.5 * 2.0 / numPixelsOnWidth;
 	double deltaY = deltaX;
-	double dA = 2 * 2 / pow(numPixelsOnWidth, 2);
+	double dA = 2.0 * 2.0 / pow(numPixelsOnWidth, 2);
 
 	for(int i = 0; i < numPixelsOnWidth; i++) {
 		for(int j = 0; j < numPixelsOnWidth; j++) {
@@ -232,6 +232,7 @@ static void PreComputeTopFaceDeltaFormFactors( float deltaFormFactors[], int num
 		}
 	}
 }
+
 
 
 
@@ -248,13 +249,13 @@ static void PreComputeSideFaceDeltaFormFactors( float deltaFormFactors[], int nu
 	double y = 0;
 	double deltaY = 0.5 * 2.0 / numPixelsOnWidth;
 	double deltaZ = deltaY;
-	double dA = 2 * 1 / pow(numPixelsOnWidth, 2) / 2 ;
+	double dA = 2.0 * 2.0 / pow(numPixelsOnWidth, 2) ;
 
-	for(unsigned int i = 0; i < numPixelsOnWidth / 2; i++) {
-		for(unsigned int j = 0; j < numPixelsOnWidth; j++) {
+	for(int i = 0; i < numPixelsOnWidth / 2; i++) {
+		for(int j = 0; j < numPixelsOnWidth; j++) {
 			z = deltaZ + (double)i * 2.0 / numPixelsOnWidth;
 			y = -1.0 + deltaY + (double)j * 2.0 / numPixelsOnWidth;
-			deltaFormFactors[numPixelsOnWidth * i + j] = dA / (M_PI * pow(z * z + y * y + 1, 2));
+			deltaFormFactors[numPixelsOnWidth * i + j] = dA * z / (M_PI * pow(z * z + y * y + 1, 2));
 		}
 	}
 }
@@ -278,6 +279,7 @@ static void SetupHemicubeTopView( const QM_ShooterQuad *shooterQuad, float nearP
 
     float lookUpVector[3];
     float referenceVector[3];
+//    VecDiff(lookUpVector, shooterQuad->v[0], shooterQuad->v[1]);
     VecCrossProd(lookUpVector, shooterQuad->normal, VecDiff(referenceVector, shooterQuad->v[0], shooterQuad->v[1]));
 
     glMatrixMode(GL_MODELVIEW);
@@ -364,6 +366,10 @@ static void UpdateRadiosities( const QM_Model *m, const float shotPower[3], cons
         m->gatherers[g]->radiosity[0] += red;
         m->gatherers[g]->radiosity[1] += gre;
         m->gatherers[g]->radiosity[2] += blu;
+
+        m->gatherers[g]->shooter->unshotPower[0] += m->gatherers[g]->surface->reflectivity[0] * deltaFormFactors[i] * shotPower[0];
+        m->gatherers[g]->shooter->unshotPower[1] += m->gatherers[g]->surface->reflectivity[1] * deltaFormFactors[i] * shotPower[1];
+        m->gatherers[g]->shooter->unshotPower[2] += m->gatherers[g]->surface->reflectivity[2] * deltaFormFactors[i] * shotPower[2];
     }
 }
 
